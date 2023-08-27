@@ -49,13 +49,18 @@
 }
 
 .record__data {
+  display: flex;
   background: #D9D9D9;
+  margin: 0px 0px 50px 50px;
   padding: 10px;
+  border-radius: 20px;
+  width: 70%;
 }
 
 .record__delete {
   background: #C1BEBE;
   border-radius: 40px;
+  border: none;
   width: 30px;
   height: 30px;
   cursor: pointer;
@@ -63,4 +68,6 @@
 
 .record__text {
   color: black;
+  width: 90%;
+  padding-left: 30px;
 }

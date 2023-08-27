@@ -1,6 +1,6 @@
 import {useState} from 'react';
-import Records from './Records.js';
 import './App.css';
+import Records from './Records.js';
 
 function App() {
   let [record, setRecord] = useState([
@@ -29,6 +29,7 @@ function App() {
               record: newRecord
             }
           ])
+          setNewRecord('');
         }}>add</button>
       
       <p className='records__subtext'>Records</p>
