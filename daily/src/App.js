@@ -29,7 +29,6 @@ function App() {
               record: newRecord
             }
           ])
-          setNewRecord('');
         }}>add</button>
       
       <p className='records__subtext'>Records</p>
