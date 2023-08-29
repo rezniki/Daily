@@ -1,12 +1,14 @@
 import {useState} from 'react';
 import './App.css';
-import Records from './Records.js';
+import Hide from './Hide/hide.jsx';
+// import Records from './Records.js';
 
 function App() {
   let [record, setRecord] = useState([
     {
       id: Math.random(),
-      record: 'Объект — это набор свойств, и каждое свойство состоит из имени и значения, ассоциированного с этим именем. Значением свойства может быть функция, которую можно назвать методом объекта. В дополнение к встроенным в браузер объектам, вы можете определить свои собственные объекты.'
+      title: 'Объект — это набор свойств,',
+      record: 'и каждое свойство состоит из имени и значения, ассоциированного с этим именем. Значением свойства может быть функция, которую можно назвать методом объекта. В дополнение к встроенным в браузер объектам, вы можете определить свои собственные объекты.'
     }
   ]);
 
@@ -26,13 +28,18 @@ function App() {
             ...record,
             {
               id: Math.random(),
+              title: newRecord,
               record: newRecord
             }
           ])
         }}>add</button>
       
       <p className='records__subtext'>Records</p>
-      <div className='records__cards'><Records record={record} setRecord={setRecord}/></div>
+      <div className='records__cards'>
+        {
+          record.map((item) => <Hide data={item}/>)
+        }
+      </div>
     </div>
   );
 }

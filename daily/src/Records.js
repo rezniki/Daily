@@ -1,7 +1,7 @@
 import {useState} from "react";
 
 function Records(props) {
-    const [expanded, setExpanded] = useState('');
+    const [expanded, setExpanded] = useState(false);
 
     return (
         <div className='record__card'>
