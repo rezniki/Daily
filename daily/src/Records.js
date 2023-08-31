@@ -9,8 +9,8 @@ function Records(props) {
                 return (
                     <div className='record__data' key={item.id}>
                         <button className='record__delete' onClick={() => {
-                        let deleteCard = props.record.filter((element) => element.id !== item.id);
-                        props.setRecord(deleteCard);
+                            let deleteCard = props.record.filter((element) => element.id !== item.id);
+                            props.setRecord(deleteCard);
                         }}>&times;</button>
                         <div className='record__content'>
                             {expanded === item.id ? (
