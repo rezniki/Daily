@@ -1,4 +1,5 @@
-import {useState} from 'react';
+import { useState } from 'react';
+import { useEffect } from 'react';
 import './App.css';
 import Hide from './Hide/hide.jsx';
 
@@ -10,6 +11,11 @@ function App() {
       record: '— это набор свойств, и каждое свойство состоит из имени и значения, ассоциированного с этим именем. Значением свойства может быть функция, которую можно назвать методом объекта. В дополнение к встроенным в браузер объектам, вы можете определить свои собственные объекты.'
     }
   ]);
+
+  useEffect(() => {
+    let recordSave = localStorage.setItem('recSave', record);
+    console.log(recordSave);
+  }, []);
 
   let [newTitle, setNewTitle] = useState();
   let [newRecord, setNewRecord] = useState();
