@@ -12,13 +12,13 @@ function App() {
     }
   ]);
 
-  useEffect(() => {
-    let recordSave = localStorage.setItem('recSave', record);
-    console.log(recordSave);
-  }, []);
-
   let [newTitle, setNewTitle] = useState();
   let [newRecord, setNewRecord] = useState();
+
+  useEffect(() => {
+    let recordLoc = localStorage.getItem('myCards');
+    console.log(recordLoc);
+  });
 
   return (
     <div className='record__container'>
@@ -41,7 +41,16 @@ function App() {
               title: newTitle,
               record: newRecord
             }
-          ])
+          ]);
+
+          localStorage.setItem('myCards', [
+            ...record, 
+            {
+              id: Math.random(),
+              title: newTitle,
+              record: newRecord
+            }            
+          ]);
         }}>add</button>
       
       <p className='records__subtext'>Records</p>

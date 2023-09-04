@@ -18,6 +18,7 @@ const Hide = (props) => {
                 <button className='record__delete' onClick={() => {
                     let deleteCard = props.record && props.record.filter((element) => element.id !== props.item.id);
                     props.setRecord(deleteCard);
+                    localStorage.removeItem('myCards');
                 }}>&times;</button>
             </div>
             <div className='record__more__card'>
