@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useEffect } from 'react';
 import './App.css';
-import Hide from './Hide/hide.jsx';
+import Hide from './Hide/Hide.jsx';
 
 function App() {
   let [record, setRecord] = useState([
@@ -17,8 +17,8 @@ function App() {
 
   useEffect(() => {
     let recordLoc = localStorage.getItem('myCards');
-    console.log(recordLoc);
-  });
+    setRecord(JSON.parse(recordLoc) || []);
+  }, []);
 
   return (
     <div className='record__container'>
@@ -40,17 +40,17 @@ function App() {
               id: Math.random(),
               title: newTitle,
               record: newRecord
-            }
+            },
           ]);
 
-          localStorage.setItem('myCards', [
+          localStorage.setItem('myCards', JSON.stringify( [
             ...record, 
             {
               id: Math.random(),
               title: newTitle,
               record: newRecord
-            }            
-          ]);
+            },            
+          ])); 
         }}>add</button>
       
       <p className='records__subtext'>Records</p>

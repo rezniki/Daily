@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './style.css';
+import './Style.css';
 
 const Hide = (props) => {
     const [isOpen, setOpen] = useState(false);
@@ -22,7 +22,7 @@ const Hide = (props) => {
                 }}>&times;</button>
             </div>
             <div className='record__more__card'>
-                <p>{props.item.title}</p>
+                <p className='record__title__text'>{props.item.title}</p>
                 <button className='record__more' onClick={handleTaskOpenButtonClick}>
                     {isOpen ? <>&#9660;</> : <>&#9668;</>}
                 </button>

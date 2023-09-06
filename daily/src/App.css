@@ -57,46 +57,4 @@
     font-size: 16px;
 }
 
-.records__cards {
-    padding: 10px;
-}
-
-.record__data {
-    display: flex;
-    background: #D9D9D9;
-    margin: 0px 0px 50px 50px;
-    padding: 10px;
-    border-radius: 20px;
-    width: 80%;
-}
-
-.record__delete {
-    background: #C1BEBE;
-    border-radius: 40px;
-    border: none;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-}
-
-.record__more__card {
-    display: flex;
-    margin-left: 50px;
-}
-
-.record__text {
-    text-align: justify;
-    color: black;
-    padding: 0px 30px 0px 30px;
-    font-family: Verdana, Tahoma, sans-serif;
-}
-
-.record__more {
-    background: #D9D9D9;
-    width: 10px;
-    height: 30px;
-    margin-left: 20px;
-    border: none;
-    cursor: pointer;
-}
 
