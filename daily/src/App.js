@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import './App.css';
 import Hide from './Hide/Hide.jsx';
+import axios from 'axios';
 
 function App() {
   let [record, setRecord] = useState([
@@ -16,8 +17,19 @@ function App() {
   let [newRecord, setNewRecord] = useState();
 
   useEffect(() => {
-    let recordLoc = localStorage.getItem('myCards');
-    setRecord(JSON.parse(recordLoc) || []);
+    const getRecord = async () => {
+      let data = await axios ({
+        method: 'get',
+        url: 'https://64fc5056605a026163ae5cee.mockapi.io/records',
+        withCredentials: false,
+      });
+
+      console.log('data: ', data.data);
+      setRecord(data.data);
+    };
+    getRecord();
+    // let recordLoc = localStorage.getItem('myCards');
+    // setRecord(JSON.parse(recordLoc) || []);
   }, []);
 
   return (
