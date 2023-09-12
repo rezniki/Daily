@@ -4,6 +4,8 @@ import './App.css';
 import Hide from './Hide/Hide.jsx';
 import axios from 'axios';
 import Quiz from 'react-quiz-component';
+import Confetti from 'react-confetti';
+
 
 function App() {
   let [record, setRecord] = useState([
@@ -140,6 +142,8 @@ function App() {
         <Quiz quiz={quiz}/>
       </div>
 
+      <Confetti/>
+
       <h2 className='record__title'>Code Diary: Exploring JavaScript Daily</h2>
       <p className='record__new'>Add new record for JS</p>
       <input className='record__input__title' type='text' placeholder='enter new title' value={newTitle}
@@ -172,12 +176,13 @@ function App() {
         }}>add</button>
       
       <p className='records__subtext'>Records</p>
-      
+
       <div className='records__cards'>
         {
           record.map((item) => <Hide record={record} item={item} setRecord={setRecord}/>)
         }
       </div>
+
     </div>
   );
 }
