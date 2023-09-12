@@ -17,6 +17,10 @@
     width: 80%;
 }
 
+.record__confetti {
+    width: 95%;
+}
+
 .record__title {
     text-align: center;
     color: whitesmoke;

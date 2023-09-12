@@ -142,7 +142,7 @@ function App() {
         <Quiz quiz={quiz}/>
       </div>
 
-      <Confetti/>
+      <Confetti className='record__confetti'/>
 
       <h2 className='record__title'>Code Diary: Exploring JavaScript Daily</h2>
       <p className='record__new'>Add new record for JS</p>
